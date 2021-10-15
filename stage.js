@@ -57,6 +57,10 @@ function alignTracks(c1, c2){
     trackShape.rotation(trackShape.rotation()-rotDiff);
     c1.connectedTrack = c2.parentTrack;
     c2.connectedTrack = c1.parentTrack;
+    if(!c1.inverse)
+        c1.parentTrack.shape.moveToTop();
+    else
+        c2.parentTrack.shape.moveToTop();
     // console.log("align");
     return true;
 }
@@ -304,10 +308,13 @@ layer.on('dragmove', function (e) {
                     let rot1 = c1.shape.getAbsoluteRotation();
                     let rot2 = c2.shape.getAbsoluteRotation();
                     console.log(rot1, rot2);
-                    if(Math.abs(rot1-rot2)<=config.snapMaxRot){
-                        alignTracks(c1,c2);
-                    }                  
-                }                
+                    if(
+                        Math.abs(rot1-rot2) <= config.snapMaxRot 
+                        || (180 - Math.abs(rot1) <= config.snapMaxRot && 180 - Math.abs(rot2) <= config.snapMaxRot )
+                        ){
+                            alignTracks(c1,c2);
+                        }                  
+                }
             }
         });
     });
@@ -320,21 +327,25 @@ layer.on('dragmove', function (e) {
 
 (function() {
 
-    function rotate(dir){
+    function rotate(dir, button){
+        button.setAttribute("disabled", 1);
         let rot = !!dir ? 45 : -45;
         if(!!selectedTrack){
             var tween = new Konva.Tween({
                 node: selectedTrack.shape,
                 duration: .5,
                 rotation: selectedTrack.shape.getAbsoluteRotation() + rot,
-                onFinish: () => updateInfo(selectedTrack)
+                onFinish: () => { 
+                    button.removeAttribute("disabled"); 
+                    updateInfo(selectedTrack);
+                }
               });
               tween.play();
               // selectedTrack.shape.rotate(45);
         }
     }
 
-    document.getElementById("bRotateRight").onclick = (e) => rotate(1);
-    document.getElementById("bRotateLeft").onclick = (e) => rotate(0);
+    document.getElementById("bRotateRight").onclick = function(e) {rotate(1,this);}
+    document.getElementById("bRotateLeft").onclick = function(e) {rotate(0,this);}
 
  })();
