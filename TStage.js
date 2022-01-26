@@ -128,13 +128,15 @@ var TStage = (function () {
 
         function applyConnectors(track){
             if(!track)
-                return;    
+                return;
+            let numIntersections = 0;
             track.connectors.forEach(c1 => {
                 connectorMap.forEach(c2 => {
-                    if(c1 != c2 && c2.parentTrack != c1.parentTrack){
+                    if(c1 != c2 && c2.parentTrack != c1.parentTrack){                        
                         if(Konva.Util.haveIntersection(c1.boundingBox.getClientRect(), c2.boundingBox.getClientRect())){
                             let rot1 = c1.shape.getAbsoluteRotation();
                             let rot2 = c2.shape.getAbsoluteRotation();
+                            numIntersections++;
                             // console.log(rot1, rot2);
                             if(
                                 c2.inverse == !c1.inverse
@@ -152,14 +154,14 @@ var TStage = (function () {
                                 c1.parentTrack.highlight(1,"red");
                                 c2.parentTrack.highlight(1,"red");
                             }
-                            else 
+                            else
                             {
                                 c1.parentTrack.highlight(0);
                                 c2.parentTrack.highlight(0);
                             }
                             // console.log(rot1,rot2);
                         }
-                        else 
+                        else if(numIntersections==0)
                         {
                             c1.parentTrack.highlight(0);
                             c2.parentTrack.highlight(0);
