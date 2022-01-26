@@ -27,13 +27,13 @@ var TStage = (function () {
                     x:0,
                     y:0
             }
-        }        
+        }
+        let actionStack = [];
 
         let config = {
             snapMaxRot: 20,
             unitSize: 25        //pixels per grid unit
         }
-        let actionStack = [];
 
         var tr = new Konva.Transformer();
         tr.rotationSnaps([0, 45, 90, 135, 180, 225, 270, 315]);
@@ -44,7 +44,7 @@ var TStage = (function () {
         function hookBeforeMod(modinfo){    
             if(currentIndex<StageDataHistory.length)
                 StageDataHistory = StageDataHistory.slice(0,currentIndex);
-            StageDataHistory.push(saveTrackData());
+            StageDataHistory.push(saveTrackData());            
         }
         function hookAfterMod(modinfo){
             if(!!document.getElementById("bForward") && !!document.getElementById("bBack")){
@@ -52,7 +52,13 @@ var TStage = (function () {
                 document.getElementById("bBack").removeAttribute("disabled");
             }
             currentIndex = StageDataHistory.length;
+            console.log(modinfo);
+            postLogEvent({
+                stagedata: saveTrackData(),
+                action: modinfo
+            });
             actionStack.push(modinfo);
+            console.log(actionStack);
         }
 
         function initGrid(){
@@ -126,17 +132,16 @@ var TStage = (function () {
             );
         }
 
-        function applyConnectors(track){
+		function applyConnectors(track){
             if(!track)
                 return;
-            let numIntersections = 0;
+            let numFalseIntersections = 0;
             track.connectors.forEach(c1 => {
                 connectorMap.forEach(c2 => {
                     if(c1 != c2 && c2.parentTrack != c1.parentTrack){                        
                         if(Konva.Util.haveIntersection(c1.boundingBox.getClientRect(), c2.boundingBox.getClientRect())){
                             let rot1 = c1.shape.getAbsoluteRotation();
-                            let rot2 = c2.shape.getAbsoluteRotation();
-                            numIntersections++;
+                            let rot2 = c2.shape.getAbsoluteRotation();                            
                             // console.log(rot1, rot2);
                             if(
                                 c2.inverse == !c1.inverse
@@ -153,6 +158,7 @@ var TStage = (function () {
                                 rejectTracks(c1,c2);
                                 c1.parentTrack.highlight(1,"red");
                                 c2.parentTrack.highlight(1,"red");
+								numFalseIntersections++;
                             }
                             else
                             {
@@ -161,7 +167,7 @@ var TStage = (function () {
                             }
                             // console.log(rot1,rot2);
                         }
-                        else if(numIntersections==0)
+                        else if(numFalseIntersections==0)
                         {
                             c1.parentTrack.highlight(0);
                             c2.parentTrack.highlight(0);
@@ -299,16 +305,17 @@ var TStage = (function () {
             var target = e.target;
             if(target.getType() !== "Group")
                 return;
-        
+
             let track = trackMap.get(target.id());
             if(!track)
-                return;
-
+                return;                
+            
             e.target.moveToTop();
+            
+            console.log(track);
+            currentMove.pos1.x = track.shape.absolutePosition().x;
+            currentMove.pos1.y = track.shape.absolutePosition().y;
 
-
-            currentMove.pos1.x = track.shape.x();
-            currentMove.pos1.y = track.shape.y();
             hookBeforeMod({
                 type: "move",
                 id: track.id,
@@ -339,8 +346,8 @@ var TStage = (function () {
                 }
             });
         
-            currentMove.pos2.x = track.shape.x();
-            currentMove.pos2.y = track.shape.y();            
+            currentMove.pos2.x = track.shape.absolutePosition().x;
+            currentMove.pos2.y = track.shape.absolutePosition().y;            
             hookAfterMod({
                 type: "move",
                 id: track.id,
