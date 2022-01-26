@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Konva</title>
+        <!-- <link rel='stylesheet' href='/stylesheets/style.css' /> -->
+        <script src="lib/konva.min.js"></script>
+        <script src="lib/lodash.min.js"></script>
+        <script src="lib/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="css/bootstrap-icons.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        
+        <div id="info" style="display: none;">nothing selected</div>
+
+        <div id="menu" class="header menu">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-3">
+                            <div id="rotate">
+                                <button class="btn btn-primary" id="bRotateRight"><i class="bi bi-arrow-clockwise"></i></button>
+                                <button  class="btn btn-primary" id="bRotateLeft"><i class="bi bi-arrow-counterclockwise"></i></button>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="container"></div>
+        
+    </body>
+
+    <script>
+
+            function postLogEvent(message)
+			{
+				console.debug("Trace Message: ", message); 
+			 
+				try
+				{
+					var pass_data = {
+						indexPath: indexPath,
+						userDefIdPath: userDefIdPath, 
+						traceMessage: { 
+							action: message,
+						},
+						traceCount : traceCount++
+					};
+
+					window.parent.postMessage(JSON.stringify(pass_data), '*');	
+				} 
+				catch(e) {
+					console.debug(e); 
+				}
+				
+			}
+
+			// Trigger an fsm event (e.g., to end the item)
+
+			function postFsmEvent(event)
+			{
+				console.debug("FSM Event: " + event);  
+				
+				try
+				{
+					var pass_data = {
+						indexPath: indexPath,
+						userDefIdPath: userDefIdPath,
+						microfinEvent: event,
+						traceMessage: { 
+							action: 'sending FSM event ' + event,
+						},
+						traceCount : '1'
+					};
+
+					window.parent.postMessage(JSON.stringify(pass_data), '*');	
+				} 
+				catch(e) {
+					console.debug(e); 
+				}
+			}
+
+			// Not required (Restore the page from a previously stored state as string, e.g., XML/JSON)
+
+			function theSetState(stateString) {
+				try {
+					console.debug("Set State: " + stateString); 
+				} 
+				catch (e) {
+					console.debug(e); 
+				}
+			}
+
+			// Not implemented (Save the state of the page as string (e.g., XML/JSON)
+			 
+			function theGetState() {
+				try {
+					console.debug("Get State");
+					var x = "state of the page";
+					return x;
+				} 
+				catch (e) {
+					console.debug(e); 
+				}
+			}
+
+			// Helper
+
+			function getQueryVariable(variable)
+			{
+				const parsedUrl = new URL(window.location.href);
+				return parsedUrl.searchParams.get(variable);
+			}
+			  
+			var indexPath = getQueryVariable('indexPath');
+			var userDefIdPath = getQueryVariable('userDefIdPath');
+			  
+			// Trace Counter
+            console.log(indexPath);
+            console.log(userDefIdPath);
+
+			var traceCount = 0;
+       
+    </script>
+
+    <script src="tracks.js"></script>
+    <script src="shapes/shape4_shuffled.js"></script>
+    <script src="TStage.js"></script>
+    <script src="index.js"></script>
+</html>
