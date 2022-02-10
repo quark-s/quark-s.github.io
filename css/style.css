@@ -1,3 +1,8 @@
+html{
+	overflow: hidden;
+}
+
+
 #menu {
     padding: 10px 0 10px 0;
     /* height: 85px; */

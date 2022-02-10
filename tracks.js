@@ -747,7 +747,8 @@ class TrackJunctionType2 extends Track{
     init(){
         
         let twidth = this._cWidth;
-        let theight = this._cHeight;
+        // let theight = this._cHeight;
+        let theight = 5*this._cWidth;
 
         this._connector1 = new Connector({x:0, y: theight+this._options.strokeWidth/2}, twidth, twidth/3, true, this);
         this._connector2 = new Connector({x:0, y: this._options.strokeWidth/2}, this._cWidth, -this._cWidth/3, false, this);
