@@ -1,54 +1,54 @@
 var trackData = [
     {
-        "id": "95b12797-227e-4bd0-b92b-f3c7293a7056",
+        "id": "fe18fe9a-363f-4ca0-b29c-d1d598ed1855",
         "type": "TrackType1",
         "pos": {
-            "x": 477,
-            "y": 212.0000000000001
+            "x": 612.294113852161,
+            "y": 300.2352957676027
         },
         "width": 2,
         "height": 10,
-        "rotation": 135,
+        "rotation": 45,
         "actualWidth": 50,
         "actualHeight": 250,
         "initialPos": {
-            "x": 351,
-            "y": 282.0000000000001
+            "x": 462.88235333716574,
+            "y": 730.8235391135038
         },
-        "initialRotation": 135,
+        "initialRotation": 45,
         "connectors": [
-            "210112fb-a532-4a97-a9db-c5a4b0dff0eb",
-            "a3103e54-3211-4744-b0f7-5d2b912faf86"
+            "5e1159ca-e57c-44bb-bcc5-aa500f66118f",
+            "4e1f9fc1-2b0a-4e3f-8b47-e5473bd301fa"
         ]
     },
     {
-        "id": "3cda6491-a7b8-48be-b0b4-9a6e880950bd",
+        "id": "3a99485f-b653-4b4a-86d0-28724c1bad34",
         "type": "TrackType2",
         "pos": {
-            "x": 195,
-            "y": 265
+            "x": 482.05881547762885,
+            "y": 314.4117656298575
         },
         "width": 2,
         "height": 6,
-        "rotation": -135,
+        "rotation": -180,
         "actualWidth": 0,
         "actualHeight": 0,
         "initialPos": {
-            "x": 372,
-            "y": 190
+            "x": 99.70588502586914,
+            "y": 801.4705982670241
         },
-        "initialRotation": -135,
+        "initialRotation": -180,
         "connectors": [
-            "b3736c7a-5bf8-4aac-95cf-68827b73820c",
-            "9d31b91a-5367-433f-9024-9a4d5d0c41ba"
+            "737bd8d6-c51b-47df-a608-5b6a53df413d",
+            "0dc2f0b4-5ac9-442d-b22b-375f00429884"
         ]
     },
     {
-        "id": "d218aee3-7943-487b-bf10-dfb700280136",
+        "id": "d0d14cff-9329-4c4e-89eb-abcd931d3f86",
         "type": "TrackType2",
         "pos": {
-            "x": 219,
-            "y": 221
+            "x": 146.0588255753566,
+            "y": 98.64705653559099
         },
         "width": -2,
         "height": 6,
@@ -56,21 +56,21 @@ var trackData = [
         "actualWidth": 0,
         "actualHeight": 0,
         "initialPos": {
-            "x": 203,
-            "y": 399
+            "x": 154.2941194620099,
+            "y": 118.64705690958093
         },
         "initialRotation": 90,
         "connectors": [
-            "ef28493c-dc13-4816-812f-a64d54654660",
-            "bd23084c-ffd9-43a9-aef7-5bbbb431bb00"
+            "862186c5-6a73-4b22-b5d5-f69e0792c715",
+            "c7084c27-394b-43e8-8728-691e63f70e1f"
         ]
     },
     {
-        "id": "f7486744-89cb-4599-8610-5e6676cffb97",
+        "id": "e706636f-2f0b-43b2-aa3c-b2d1c83a4771",
         "type": "TrackType2",
         "pos": {
-            "x": 62,
-            "y": 298
+            "x": 110.23529276468355,
+            "y": 253.29411681108132
         },
         "width": -2,
         "height": 6,
@@ -78,21 +78,21 @@ var trackData = [
         "actualWidth": 0,
         "actualHeight": 0,
         "initialPos": {
-            "x": 464,
-            "y": 194
+            "x": 126.70588053799011,
+            "y": 298
         },
         "initialRotation": 0,
         "connectors": [
-            "8c8a9dc0-297f-46d2-a688-231487d1bb32",
-            "891c1d3d-806c-4c06-abf7-05a0d0ce07ba"
+            "14d41575-dd81-46d5-acc0-bf3efac753fb",
+            "6b462cfe-a4b0-4240-b366-13aad6990a05"
         ]
     },
     {
-        "id": "bc2726cb-84ca-4817-a0ae-f1dba18f23bd",
+        "id": "43233e18-8ae9-405e-90fa-03111233f635",
         "type": "TrackType2",
         "pos": {
-            "x": 161,
-            "y": 334
+            "x": 440.9999921462117,
+            "y": 82.23528940977377
         },
         "width": 2,
         "height": 6,
@@ -100,43 +100,43 @@ var trackData = [
         "actualWidth": 0,
         "actualHeight": 0,
         "initialPos": {
-            "x": 79,
-            "y": 462
+            "x": 402.17646382341763,
+            "y": 82.23528940977377
         },
         "initialRotation": -90,
         "connectors": [
-            "73fd9f9d-07d0-450e-b8a5-49b93cc91af4",
-            "82a9dadb-30b1-4b53-9af5-30f6548e6cc9"
+            "a1a3d5d7-2012-436f-a5b4-7c2eede8bd23",
+            "fb3bf20f-d430-4ac2-8f48-b2b964c8e3ab"
         ]
     },
     {
-        "id": "a46ddf2d-6197-4c13-af77-8cf481857934",
+        "id": "04b25e8b-c9d9-4676-98a4-8471c3938db0",
         "type": "TrackType2",
         "pos": {
-            "x": 275,
-            "y": 393
+            "x": 459.70587717208076,
+            "y": 496.5294137006539
         },
         "width": -2,
         "height": 10,
-        "rotation": 90,
+        "rotation": 45,
         "actualWidth": 0,
         "actualHeight": 0,
         "initialPos": {
-            "x": 576,
-            "y": 515
+            "x": 410.2941138521611,
+            "y": 764.7647128341658
         },
-        "initialRotation": 90,
+        "initialRotation": 45,
         "connectors": [
-            "d1baa20a-cb19-418a-9c60-9247e1563974",
-            "f52ef5d6-409b-4f63-9406-eeb824527eaf"
+            "228ffcbb-06b9-4668-8d1f-b170dd0580ce",
+            "11e8d7db-c2ff-4a76-bcc2-379c22dca22d"
         ]
     },
     {
-        "id": "79df24c1-45ad-492f-8de2-a231b895d4fe",
+        "id": "1f736265-a683-4651-9d76-6aa87cb5f158",
         "type": "TrackType2",
         "pos": {
-            "x": 246.99999999999994,
-            "y": 275.0000000000001
+            "x": 450.5294060558598,
+            "y": 299.7058828149289
         },
         "width": -2,
         "height": 10,
@@ -144,21 +144,21 @@ var trackData = [
         "actualWidth": 0,
         "actualHeight": 0,
         "initialPos": {
-            "x": 265.99999999999994,
-            "y": 275.0000000000001
+            "x": 450.5294060558598,
+            "y": 299.7058828149289
         },
         "initialRotation": -180,
         "connectors": [
-            "49751da0-e2f8-4e56-a4aa-35c5b2234cec",
-            "991c8fa5-120b-448c-969d-4a860b1800aa"
+            "eb9f3517-ff30-42c5-b037-7cb7308f4426",
+            "bfec85a4-5014-4754-ba86-9565e1f1614e"
         ]
     },
     {
-        "id": "af06a646-ca41-4496-a1c4-006086b885cf",
+        "id": "579cbd4b-653d-4c35-8c8e-7292e702f758",
         "type": "TrackType2",
         "pos": {
-            "x": 32,
-            "y": 492
+            "x": 159.05881996550784,
+            "y": 280.23529015775364
         },
         "width": -2,
         "height": 10,
@@ -166,43 +166,43 @@ var trackData = [
         "actualWidth": 0,
         "actualHeight": 0,
         "initialPos": {
-            "x": 32,
-            "y": 492
+            "x": 142.58823219220127,
+            "y": 341.41176188995814
         },
         "initialRotation": 0,
         "connectors": [
-            "1b365c72-ef5b-436f-9d89-9e7623bf19b5",
-            "39de4f7f-b225-4110-b32e-faad279c1637"
+            "9d0cddd1-3f44-42a7-9eb1-811ce7245933",
+            "195b7748-b007-4b66-9dcd-06a2eb77f3d9"
         ]
     },
     {
-        "id": "9e2c0be4-4d23-4a2e-aea1-659e66952593",
+        "id": "f18f3590-4e68-47ae-b7dc-621722d59295",
         "type": "TrackType2",
         "pos": {
-            "x": 196.9999999999999,
-            "y": 653
+            "x": 654.6470459868752,
+            "y": 338.88234706733454
         },
         "width": -2,
         "height": 10,
-        "rotation": -90,
+        "rotation": 0,
         "actualWidth": 0,
         "actualHeight": 0,
         "initialPos": {
-            "x": 400.9999999999999,
-            "y": 639
+            "x": 139.35294279342688,
+            "y": 757.7058843108885
         },
-        "initialRotation": -90,
+        "initialRotation": 0,
         "connectors": [
-            "4ce9f38f-50f3-4a0f-8e49-61ff770dc86a",
-            "cdc4041a-1831-4be8-855b-bf6d34ee7133"
+            "a803e712-d95a-49ed-ac31-8b810a662867",
+            "7e58ba43-0083-4849-92b7-da6a2ebab37f"
         ]
     },
     {
-        "id": "c7ca2eb0-a02a-4d07-b18c-a420d9c2bcec",
+        "id": "7caf8812-c911-4b02-8bfe-13277d2fe059",
         "type": "TrackType1",
         "pos": {
-            "x": 180,
-            "y": 476.00000000000017
+            "x": 167.05882389240196,
+            "y": 423.0588225394387
         },
         "width": 2,
         "height": 10,
@@ -210,21 +210,21 @@ var trackData = [
         "actualWidth": 50,
         "actualHeight": 250,
         "initialPos": {
-            "x": 429,
-            "y": 226.00000000000017
+            "x": 145.88235389815065,
+            "y": 493.64705915352084
         },
-        "initialRotation": 45.00000000000002,
+        "initialRotation": 45.00000000000003,
         "connectors": [
-            "e3441ebf-22ea-4e76-a90d-354dbf1d8df0",
-            "a2b8a175-b41d-4618-b683-a3ebf3e6caea"
+            "9de4ec4a-3c94-4b5b-bd6b-e9d8ab9cddb3",
+            "19d55888-fd88-449e-99a2-6731af06fad6"
         ]
     },
     {
-        "id": "81036a56-c036-43d8-9788-582835abc27e",
+        "id": "bfbbe452-cd3c-4e38-bb98-1df882beb646",
         "type": "TrackType1",
         "pos": {
-            "x": 18,
-            "y": 23
+            "x": 179.17646606735718,
+            "y": 45.35294159445934
         },
         "width": 2,
         "height": 2,
@@ -232,21 +232,21 @@ var trackData = [
         "actualWidth": 50,
         "actualHeight": 50,
         "initialPos": {
-            "x": 50,
-            "y": 50
+            "x": 45.05882277043223,
+            "y": 65.35294196844927
         },
         "initialRotation": 0,
         "connectors": [
-            "68685998-ab4a-48ce-8796-5f0c6bc37b8f",
-            "8072f999-df27-4f47-8b87-c4a6af6f4047"
+            "2b04b5a5-eada-4757-ab06-912503c0693b",
+            "98b6e11e-f303-43e7-baa9-f906029ecbc2"
         ]
     },
     {
-        "id": "ccdfea15-51ec-48ac-8120-91307b541ae2",
+        "id": "95013c20-1aa4-438a-85f2-9d2e98abed14",
         "type": "TrackType1",
         "pos": {
-            "x": 289,
-            "y": 529
+            "x": 38.41177173469283,
+            "y": 80.76469750057856
         },
         "width": 2,
         "height": 4,
@@ -254,43 +254,43 @@ var trackData = [
         "actualWidth": 50,
         "actualHeight": 100,
         "initialPos": {
-            "x": 50,
-            "y": 50
+            "x": 39.58824228992901,
+            "y": 190.17646425240585
         },
         "initialRotation": 0,
         "connectors": [
-            "6b00dc89-f7a4-4f58-9050-f9b09fb2caa1",
-            "a7f7ac40-a2e2-4c1a-99e8-7864d05111c6"
+            "cc8834e3-fccf-4cd0-989c-c57dc32815e0",
+            "a19e557a-ff39-420f-8e74-923764a3eb9f"
         ]
     },
     {
-        "id": "52f46f0b-1a67-4789-98cf-f7b704fc3e8e",
+        "id": "39fe91c3-b9f4-4bfd-8606-381f63c6b947",
         "type": "TrackType1",
         "pos": {
-            "x": 223,
-            "y": 664
+            "x": 68.88235726405992,
+            "y": 174.58822614236402
         },
         "width": 2,
         "height": 4,
-        "rotation": 0,
+        "rotation": -90,
         "actualWidth": 50,
         "actualHeight": 100,
         "initialPos": {
-            "x": 50,
-            "y": 50
+            "x": 99.4705917002007,
+            "y": 218.117638721048
         },
-        "initialRotation": 0,
+        "initialRotation": -90,
         "connectors": [
-            "46c474f0-c58c-4786-9df2-afd24f0f071b",
-            "52af5206-7e15-48f5-8792-db23f3a7e67c"
+            "9ca975b9-674a-4802-b1a6-21c8c41238f0",
+            "72d473c1-a4c1-4402-8095-5251255d3798"
         ]
     },
     {
-        "id": "335d0494-3b1b-4faa-9c56-e345a767b692",
+        "id": "b50f3420-557f-4a87-8bee-93715ba742aa",
         "type": "TrackCrossType1",
         "pos": {
-            "x": 268,
-            "y": 289
+            "x": 315.0588222094473,
+            "y": 93.70587870103947
         },
         "width": 2,
         "height": 4,
@@ -298,45 +298,45 @@ var trackData = [
         "actualWidth": 125,
         "actualHeight": 100,
         "initialPos": {
-            "x": 50,
-            "y": 50
+            "x": 275.0588233314171,
+            "y": 99.58823175221298
         },
         "initialRotation": 0,
         "connectors": [
-            "ab4439c4-1482-4a6c-b62a-4041864e17df",
-            "a5229da9-f880-4e1e-a45e-162fa63cbd25",
-            "a5120d61-fac1-4a6a-a962-006100cd0b4e",
-            "fa70074b-a3b2-4a54-afcc-abbc5e9baeef"
+            "9bc11872-d99b-4c01-acb0-1af47253bf08",
+            "278e9a0b-7ed6-42d1-ba5c-c4a5fbceb06f",
+            "bc4d380f-bc3b-41b3-a63d-cd20590db19e",
+            "87d8158c-ff98-48aa-abce-d178c4c46cc5"
         ]
     },
     {
-        "id": "96714639-3fcc-410d-abd5-06f7697c7a8c",
+        "id": "38352568-1d0a-4d39-abc1-da2341eb8fe0",
         "type": "TrackType3",
         "pos": {
-            "x": 393,
-            "y": 416
+            "x": 734.1764610184932,
+            "y": 132.4705829334367
         },
         "width": 2,
         "height": 10,
-        "rotation": 0,
+        "rotation": -90,
         "actualWidth": 0,
         "actualHeight": 0,
         "initialPos": {
-            "x": 50,
-            "y": 50
+            "x": 274.17647392114543,
+            "y": 764.2353006294717
         },
-        "initialRotation": 0,
+        "initialRotation": -90,
         "connectors": [
-            "efbccb6c-848d-4121-8d7c-d0a66d49613a",
-            "1b0a8d48-10ca-468d-8a93-59a2f3b23937"
+            "eed666f2-c89e-4251-9317-c127b871466f",
+            "e3ae0070-2c6d-4171-b003-ff71eff2155f"
         ]
     },
     {
-        "id": "c7623719-f810-4d6c-ba88-18375eae0b46",
+        "id": "762b8d90-65b9-410a-9148-5778f1d2a762",
         "type": "TrackType3",
         "pos": {
-            "x": 493,
-            "y": 453
+            "x": 323.5882400459896,
+            "y": 300.0588206694888
         },
         "width": -2,
         "height": 10,
@@ -344,21 +344,21 @@ var trackData = [
         "actualWidth": 0,
         "actualHeight": 0,
         "initialPos": {
-            "x": 50,
-            "y": 50
+            "x": 323.5882400459896,
+            "y": 300.0588206694888
         },
         "initialRotation": 0,
         "connectors": [
-            "d5041dcb-f338-437f-97d8-741c25939e30",
-            "75cd53c3-6f49-4268-948b-feeb96e3c521"
+            "cd546362-14b0-474c-9810-d23a5f593857",
+            "84e1cbfa-0b51-4333-ad0c-6587969c1a18"
         ]
     },
     {
-        "id": "3f6ff2ef-148e-4616-9017-b41d23b7381a",
+        "id": "413913cf-4787-4104-9499-77290d488d60",
         "type": "TrackJunctionType1",
         "pos": {
-            "x": 408,
-            "y": 761
+            "x": 160.94118340040137,
+            "y": 516.2941130711819
         },
         "width": 2,
         "height": 10,
@@ -366,37 +366,37 @@ var trackData = [
         "actualWidth": 125,
         "actualHeight": 250,
         "initialPos": {
-            "x": 50,
-            "y": 50
+            "x": 215.05882894126583,
+            "y": 537.4705840554066
         },
         "initialRotation": -90,
         "connectors": [
-            "3c77f2ec-c4e4-4288-8c3a-e95d23a0b500",
-            "535cc4ee-5da4-49dd-a909-6f15e6a04567",
-            "c26a8b33-1509-42ac-991e-4ab1d771dfd6"
+            "37ab0838-ced2-40da-8122-5d6c2b84fd04",
+            "d1c37020-b748-4440-8562-0f4c2b60a8ba",
+            "1f864901-e788-4650-9b3a-6c12d4682cb4"
         ]
     },
     {
-        "id": "df3c3e9b-81dc-4458-bbb1-ede25d8391d0",
+        "id": "83753f22-e65c-4a07-ac22-4c1e3ce582be",
         "type": "TrackJunctionType2",
         "pos": {
-            "x": 565,
-            "y": 18
+            "x": 648.5294094217691,
+            "y": 88.58823661408198
         },
         "width": 2,
         "height": 10,
-        "rotation": 90,
+        "rotation": 90.00000000000001,
         "actualWidth": 125,
         "actualHeight": 250,
         "initialPos": {
-            "x": 50,
-            "y": 50
+            "x": 452.05882669732637,
+            "y": 533.2941272827993
         },
         "initialRotation": 90,
         "connectors": [
-            "4fada4d7-b2ab-4730-855c-1beae6c1ac46",
-            "64fee051-fa1e-46ee-9e73-aabf0e4c82b1",
-            "6badf683-01c0-4001-bfba-0d63444e0084"
+            "64a121ab-6b05-46be-8565-c289a215602e",
+            "5aa1b291-ed42-4036-8af2-ac8d5b519783",
+            "97abd30f-4e2e-4e05-a294-116e11b14f62"
         ]
     }
 ]

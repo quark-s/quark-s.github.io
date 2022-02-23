@@ -14,20 +14,26 @@
         
         <div id="info" style="display: none;">nothing selected</div>
 
-        <div id="menu" class="header menu">
+         <div id="menu" class="header menu">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-sm-3">
+                    <div class="col">
                             <div id="rotate">
                                 <button class="btn btn-primary" id="bRotateRight"><i class="bi bi-arrow-clockwise"></i></button>
                                 <button  class="btn btn-primary" id="bRotateLeft"><i class="bi bi-arrow-counterclockwise"></i></button>
+                                <button class="btn btn-primary" id="bZoomIn"><i class="bi bi-zoom-in"></i></button>
+                                <button  class="btn btn-primary" id="bZoomOut"><i class="bi bi-zoom-out"></i></button>								
                             </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div id="container"></div>
-        
+        <div id="wrapper-outer" style="width: 1024px; height: 768px; overflow:hidden;">
+            <div id="wrapper-inner" style="transform:scale(.85); transform-origin: top left;">
+                <div id="container"></div>
+            </div>
+        </div>
+		
     </body>
 
     <script>

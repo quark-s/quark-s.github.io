@@ -9,7 +9,7 @@ let trackTypes = [
 ];
 
 TStage.loadTrackData(trackData);
-
+// TStage.zoom(1.5);
 
 (function() {
 
@@ -83,6 +83,34 @@ TStage.loadTrackData(trackData);
 		};
 	}
 
+	if(!!document.getElementById("bZoomIn")){
+		document.getElementById("bZoomIn").onclick = function(e) {
+			// TStage.zoom(2);
+			if((scale+0.1)<=0.85)
+				scale+=0.1;
+			document.querySelector('#wrapper-inner').style.transform = "scale(" + scale + ")";
+			TStage.setScale(scale);
+			if(scale>=0.85)
+				document.querySelector('#bZoomIn').setAttribute("disabled", 1);
+				// e.target.setAttribute("disabled", 1);
+			document.querySelector('#bZoomOut').removeAttribute("disabled");
+		};
+	}
+
+	if(!!document.getElementById("bZoomOut")){
+		document.getElementById("bZoomOut").onclick = function(e) {
+			// TStage.zoom(0.5);
+			if((scale-0.1)>=0.5)
+				scale-=0.1;
+			TStage.setScale(scale);
+			document.querySelector('#wrapper-inner').style.transform = "scale(" + scale + ")";
+			if(scale<=0.59)
+				// e.target.setAttribute("disabled", 1);
+				document.querySelector('#bZoomOut').setAttribute("disabled", 1);				
+			document.querySelector('#bZoomIn').removeAttribute("disabled");			
+		};
+	}
+
 
 	if(!!document.getElementById("addTrackType")){
 		let trackSel = document.getElementById("addTrackType");
@@ -111,5 +139,9 @@ TStage.loadTrackData(trackData);
 			}, 1000);
 		};
 	}
+
+	let scale = 0.85;
+	document.querySelector('#wrapper-inner').style.transform = "scale(" + scale + ")";
+	document.getElementById("bZoomIn").setAttribute("disabled", 1);
 
  })();
