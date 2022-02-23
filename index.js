@@ -31,7 +31,6 @@ TStage.loadTrackData(trackData);
             let _rotation = _crotation + rot;
 			rotmap.set(selectedTrack.shape.id(), _rotation);
 			// console.log(rotmap, rot, _crotation, _rotation);
-			console.log(rot, _crotation, _rotation);
             button.setAttribute("disabled", 1);
             var tween = new Konva.Tween({
                 node: selectedTrack.shape,
