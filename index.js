@@ -25,12 +25,11 @@ TStage.loadTrackData(trackData);
         }
         if(!!selectedTrack){
             TStage.hookBeforeMod(logdata);
+			// console.log(selectedTrack.shape.rotation(),selectedTrack.shape.getAbsoluteRotation());
 			let _crotation = selectedTrack.shape.getAbsoluteRotation();
 			if(rotmap.has(selectedTrack.shape.id()))
 				_crotation = rotmap.get(selectedTrack.shape.id());
             let _rotation = _crotation + rot;
-			rotmap.set(selectedTrack.shape.id(), _rotation);
-			// console.log(rotmap, rot, _crotation, _rotation);
             button.setAttribute("disabled", 1);
             var tween = new Konva.Tween({
                 node: selectedTrack.shape,
@@ -41,6 +40,14 @@ TStage.loadTrackData(trackData);
                     selectedTrack.rotation = _rotation;
                     TStage.updateInfo(selectedTrack);
                     TStage.hookAfterMod(logdata);
+
+					if (_rotation>0 && (_rotation-360)>0)
+					_rotation-=360;
+					if(	_rotation<0 && (_rotation+360)<0)
+						_rotation+=360;
+					rotmap.set(selectedTrack.shape.id(), _rotation);
+					selectedTrack.shape.rotation(_rotation);
+					// console.log(rotmap, rot, _crotation, _rotation);
                }
             });
             tween.play();            
