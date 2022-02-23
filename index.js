@@ -13,6 +13,8 @@ TStage.loadTrackData(trackData);
 
 (function() {
 
+	let rotmap = new Map();
+
     function rotate(dir, button){
         let rot = !!dir ? 45 : -45;
         let selectedTrack = TStage.getSelectedTrack();
@@ -23,7 +25,13 @@ TStage.loadTrackData(trackData);
         }
         if(!!selectedTrack){
             TStage.hookBeforeMod(logdata);
-            let _rotation = selectedTrack.shape.getAbsoluteRotation() + rot;
+			let _crotation = selectedTrack.shape.getAbsoluteRotation();
+			if(rotmap.has(selectedTrack.shape.id()))
+				_crotation = rotmap.get(selectedTrack.shape.id());
+            let _rotation = _crotation + rot;
+			rotmap.set(selectedTrack.shape.id(), _rotation);
+			// console.log(rotmap, rot, _crotation, _rotation);
+			console.log(rot, _crotation, _rotation);
             button.setAttribute("disabled", 1);
             var tween = new Konva.Tween({
                 node: selectedTrack.shape,
