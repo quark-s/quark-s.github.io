@@ -169,7 +169,12 @@ var TStage = (function () {
                     // console.log(socket, track.shape);
                     let rot1 = track.shape.getAbsoluteRotation();
                     let rot2 = socket.getAbsoluteRotation()                
-                    if(Math.abs(rot1-rot2) <= config.snapMaxRot && Math.abs(socket.position().x - track.shape.position().x)<= 30 && Math.abs(socket.position().y - track.shape.position().y)<= 30){
+                    if(
+                        (Math.abs(rot1-rot2) <= config.snapMaxRot || shapeClass == "DemoShape2") && 
+                        Math.abs(socket.position().x - track.shape.position().x)<= 30 && 
+                        Math.abs(socket.position().y - track.shape.position().y)<= 30
+                    )
+                    {
                         track.shape.position({
                             x: socket.position().x,
                             y: socket.position().y
