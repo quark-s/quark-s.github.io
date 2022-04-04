@@ -187,6 +187,7 @@ var TStage = (function () {
                     // }
                 }
             });
+            return;
         }
 
         let numFalseIntersections = 0;
