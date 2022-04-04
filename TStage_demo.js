@@ -20,6 +20,9 @@ var TStage = (function () {
     let StageDataHistory = [];
     let currentIndex = 0;
 
+    //Demo / Intro
+    let sockets = new Map();
+
     let scale = 0.85;
     let boundaries = {
         0.85: {
@@ -159,6 +162,28 @@ var TStage = (function () {
     function applyConnectors(track){
         if(!track)
             return;
+        
+        if(track.data.type.indexOf("DemoShape")==0){
+            sockets.forEach((socket, shapeClass) => {
+                if(shapeClass == track.data.type && Konva.Util.haveIntersection(track.shape.getClientRect(), socket.getClientRect())){
+                    // console.log(socket, track.shape);
+                    let rot1 = track.shape.getAbsoluteRotation();
+                    let rot2 = socket.getAbsoluteRotation()                
+                    if(Math.abs(rot1-rot2) <= config.snapMaxRot && Math.abs(socket.position().x - track.shape.position().x)<= 30 && Math.abs(socket.position().y - track.shape.position().y)<= 30){
+                        track.shape.position({
+                            x: socket.position().x,
+                            y: socket.position().y
+                        });
+                        track.shape.rotation(rot2);
+                        // track.highlight(1,"green");
+                    }
+                    // else{
+                    //     track.highlight(track.shape.isDragging());
+                    // }
+                }
+            });
+        }
+
         let numFalseIntersections = 0;
         track.connectors.forEach(c1 => {
             connectorMap.forEach(c2 => {
@@ -510,7 +535,7 @@ var TStage = (function () {
 
     let rectangle = new Konva.Rect({
         x: 100,
-        y: 60,
+        y: 175,
         sides: 3,
         width: config.unitSize*5+2,
         height: config.unitSize*8.5+2,
@@ -521,9 +546,9 @@ var TStage = (function () {
         name: 'slot-rectangle',
         id: createUUID()
     });
-    let rectangleFrame = new Konva.Rect({
+    let rectFrameData = {
         x: 100,
-        y: 60,
+        y: 175,
         sides: 3,
         width: config.unitSize*5+6,
         height: config.unitSize*8.5+6,
@@ -537,7 +562,10 @@ var TStage = (function () {
         shadowOffset: { x: 2, y: 2 },
         shadowOpacity: 0.5,        
         id: createUUID()
-    });
+    };
+    let rectangleFrame = new Konva.Rect(rectFrameData);
+    rectangle.offsetX(rectFrameData.width/2);  rectangle.offsetY(rectFrameData.height/2);
+    rectangleFrame.offsetX(rectFrameData.width/2);  rectangleFrame.offsetY(rectFrameData.height/2);
     layer.add(rectangle, rectangleFrame);
 
 
@@ -569,6 +597,10 @@ var TStage = (function () {
     });
     layer.add(circle, circleFrame);    
 
+    // sockets.push(circleFrame, triangleFrame, rectangleFrame);
+    sockets.set("DemoShape1", rectangleFrame);
+    sockets.set("DemoShape2", circleFrame);
+    sockets.set("DemoShape3", triangleFrame);
    
 
     //public elements

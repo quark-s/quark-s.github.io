@@ -474,7 +474,7 @@ class DemoShape3 extends Track{
             fill: '#EEE',
             stroke: 'black',
             strokeWidth: 2,
-            name: 'DemoShape1'
+            name: 'DemoShape3'
         };
         this._connector1 = null;
         this._connector2 = null;
