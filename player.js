@@ -92,3 +92,5 @@ $('#playerSlider').on("input", function(){
     console.log(this.value);
 });
 
+let scale = 0.65;
+document.querySelector('#wrapper-inner').style.transform = "scale(" + scale + ")";
