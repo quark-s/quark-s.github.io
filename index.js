@@ -19,9 +19,13 @@ TStage.loadTrackData(trackData);
         let rot = !!dir ? 45 : -45;
         let selectedTrack = TStage.getSelectedTrack();
         let logdata = {
-            id: selectedTrack.id,
             type: "rotate",
-            rotation: rot
+            data: {
+				id: selectedTrack.id,
+				rotation: rot,
+				start: new Date().getTime(),
+				end: null
+			}
         }
         if(!!selectedTrack){
             TStage.hookBeforeMod(logdata);
@@ -39,11 +43,11 @@ TStage.loadTrackData(trackData);
                     button.removeAttribute("disabled");
                     selectedTrack.rotation = _rotation;
                     TStage.updateInfo(selectedTrack);
+					logdata.data.end = new Date().getTime();
                     TStage.hookAfterMod(logdata);
-
 					if (_rotation>0 && (_rotation-360)>0)
-					_rotation-=360;
-					if(	_rotation<0 && (_rotation+360)<0)
+						_rotation-=360;
+					else if(_rotation<0 && (_rotation+360)<0)
 						_rotation+=360;
 					rotmap.set(selectedTrack.shape.id(), _rotation);
 					selectedTrack.shape.rotation(_rotation);
@@ -100,28 +104,48 @@ TStage.loadTrackData(trackData);
 	if(!!document.getElementById("bZoomIn")){
 		document.getElementById("bZoomIn").onclick = function(e) {
 			// TStage.zoom(2);
-			if((scale+0.1)<=0.85)
+			if((scale+0.1)<=0.85){
 				scale+=0.1;
-			document.querySelector('#wrapper-inner').style.transform = "scale(" + scale + ")";
-			TStage.setScale(scale);
-			if(scale>=0.85)
-				document.querySelector('#bZoomIn').setAttribute("disabled", 1);
-				// e.target.setAttribute("disabled", 1);
-			document.querySelector('#bZoomOut').removeAttribute("disabled");
+				document.querySelector('#wrapper-inner').style.transform = "scale(" + scale + ")";
+				TStage.setScale(scale);
+				if(scale>=0.85)
+					document.querySelector('#bZoomIn').setAttribute("disabled", 1);
+					// e.target.setAttribute("disabled", 1);
+				document.querySelector('#bZoomOut').removeAttribute("disabled");
+				postLogEvent({
+					action: {
+						type: "zoom-in",
+						data: {
+							scale: scale,
+							timestamp: new Date().getTime()
+						}
+					}
+				});				
+			}
 		};
 	}
 
 	if(!!document.getElementById("bZoomOut")){
 		document.getElementById("bZoomOut").onclick = function(e) {
 			// TStage.zoom(0.5);
-			if((scale-0.1)>=0.5)
+			if((scale-0.1)>=0.5){
 				scale-=0.1;
-			TStage.setScale(scale);
-			document.querySelector('#wrapper-inner').style.transform = "scale(" + scale + ")";
-			if(scale<=0.59)
-				// e.target.setAttribute("disabled", 1);
-				document.querySelector('#bZoomOut').setAttribute("disabled", 1);				
-			document.querySelector('#bZoomIn').removeAttribute("disabled");			
+				TStage.setScale(scale);
+				document.querySelector('#wrapper-inner').style.transform = "scale(" + scale + ")";
+				if(scale<=0.59)
+					// e.target.setAttribute("disabled", 1);
+					document.querySelector('#bZoomOut').setAttribute("disabled", 1);				
+				document.querySelector('#bZoomIn').removeAttribute("disabled");
+				postLogEvent({
+					action: {
+						type: "zoom-out",
+						data: {
+							scale: scale,
+							timestamp: new Date().getTime()
+						}
+					}
+				});
+			}		
 		};
 	}
 
