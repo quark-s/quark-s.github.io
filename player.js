@@ -89,16 +89,20 @@ class TraintrackLog extends LitElement {
             let stageHistory = [];
             let actions = [];
             let slider = $('#playerSlider');
+            slider.val(0);
             let playInterval = null;
-
+            
             TStage.toggleReplayMode();
-
+            
             $('#bLoadStage').on('click', function(){
+                window.clearInterval(playInterval);
                 try {
                     stageHistory = [];
                     actions = [];        
                     let data = JSON.parse($('#stageData').val());        
                     let stagedata = null;
+                    slider.val(0);
+                    currentIndex = 0;
                     let i = 0;
                     
                     do {
@@ -183,7 +187,7 @@ class TraintrackLog extends LitElement {
             });
 
             $('#playerSlider').on("input", function(){
-
+                window.clearInterval(playInterval);
                 if(!!stageHistory[this.value]){
                     TStage.loadTrackData(stageHistory[this.value]);
                     $('#log')[0].actions = actions.slice(0,parseInt(this.value)+1);
