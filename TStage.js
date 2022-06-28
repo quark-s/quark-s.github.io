@@ -178,7 +178,8 @@ var TStage = (function () {
                             }
 
                             else if(
-                                c2.inverse == c1.inverse
+                                !replayMode
+                                && c2.inverse == c1.inverse
                                 && Math.abs((Math.abs(rot1) + Math.abs(rot2)) - 180) <= config.snapMaxRot 
                             ){
                                 rejectTracks(c1,c2);
