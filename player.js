@@ -36,8 +36,6 @@ class TraintrackLog extends LitElement {
     renderActionDetails(data){
         return html`
             ${Object.keys(data).map(e => {
-                if(e=="id")
-                    return "";
                 return html`
                     <strong>${e}: </strong>${JSON.stringify(data[e])}<br/>
                 `
