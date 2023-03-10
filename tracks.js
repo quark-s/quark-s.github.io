@@ -272,10 +272,14 @@ class Track{
         this._id = id;
     }
 
+    // c?.connectedTrack ? c.connectedTrack.shape.id() : "none";
+
     get data(){
         let connectors = this.connectors.map((e) => {
-            if(e && e.id)
-                return e.id;
+            if(e && e?.connectedTrack)
+                return e.connectedTrack.shape.id();
+            else
+                return null;
         });
         return {
             // pos:{
