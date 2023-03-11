@@ -172,7 +172,7 @@ class Connector{
 //abstract class Track
 class Track{
 
-    constructor(pos, cWidth, cHeight, cRot){
+    constructor(pos, cWidth, cHeight, cRot, id){
         this._options = {
             fill: '#EEE',
             stroke: 'black',
@@ -186,7 +186,7 @@ class Track{
         this._group = null;
         this._isSelected = false;
         this._onSelect = null;
-        this._id = createUUID();
+        this._id = id ?? createUUID();
     }
 
     init() {
@@ -272,12 +272,10 @@ class Track{
         this._id = id;
     }
 
-    // c?.connectedTrack ? c.connectedTrack.shape.id() : "none";
-
     get data(){
         let connectors = this.connectors.map((e) => {
             if(e && e?.connectedTrack)
-                return e.connectedTrack.shape.id();
+                return e.connectedTrack.id;
             else
                 return null;
         });
@@ -313,8 +311,8 @@ class Track{
 
 class DemoShape1 extends Track{
 
-    constructor(pos, cWidth, cHeight, cRot){
-        super(pos, cWidth, cHeight, cRot);
+    constructor(pos, cWidth, cHeight, cRot, id){
+        super(pos, cWidth, cHeight, cRot, id);
         this._options = {
             fill: '#EEE',
             stroke: 'black',
@@ -397,8 +395,8 @@ class DemoShape1 extends Track{
 
 class DemoShape2 extends Track{
 
-    constructor(pos, cWidth, cHeight, cRot){
-        super(pos, cWidth, cHeight, cRot);
+    constructor(pos, cWidth, cHeight, cRot, id){
+        super(pos, cWidth, cHeight, cRot, id);
         this._options = {
             fill: '#EEE',
             stroke: 'black',
@@ -476,8 +474,8 @@ class DemoShape2 extends Track{
 
 class DemoShape3 extends Track{
 
-    constructor(pos, cWidth, cHeight, cRot){
-        super(pos, cWidth, cHeight, cRot);
+    constructor(pos, cWidth, cHeight, cRot, id){
+        super(pos, cWidth, cHeight, cRot, id);
         this._options = {
             fill: '#EEE',
             stroke: 'black',
@@ -560,8 +558,8 @@ class DemoShape3 extends Track{
 
 class TrackType1 extends Track{
 
-    constructor(pos, cWidth, cHeight, cRot){
-        super(pos, cWidth, cHeight, cRot);
+    constructor(pos, cWidth, cHeight, cRot, id){
+        super(pos, cWidth, cHeight, cRot, id);
         this._options = {
             fill: '#EEE',
             stroke: 'black',
@@ -658,8 +656,8 @@ class TrackType1 extends Track{
 
 class TrackType2 extends Track{
 
-    constructor(pos, cWidth, cHeight, cRot){
-        super(pos, cWidth, cHeight, cRot);
+    constructor(pos, cWidth, cHeight, cRot, id){
+        super(pos, cWidth, cHeight, cRot, id);
         this._options = {
             fill: '#EEE',
             stroke: 'black',
@@ -811,8 +809,8 @@ class TrackType2 extends Track{
 
 class TrackType3 extends Track{
 
-    constructor(pos, cWidth, cHeight, cRot){
-        super(pos, cWidth, cHeight, cRot);
+    constructor(pos, cWidth, cHeight, cRot, id){
+        super(pos, cWidth, cHeight, cRot, id);
         this._options = {
             fill: '#EEE',
             stroke: 'black',
@@ -939,8 +937,8 @@ class TrackType3 extends Track{
 
 class TrackJunctionType1 extends Track{
 
-    constructor(pos, cWidth, cHeight, cRot){
-        super(pos, cWidth, cHeight, cRot);
+    constructor(pos, cWidth, cHeight, cRot, id){
+        super(pos, cWidth, cHeight, cRot, id);
         this._options = {
             fill: '#EEE',
             stroke: 'black',
@@ -1072,8 +1070,8 @@ class TrackJunctionType1 extends Track{
 
 class TrackJunctionType2 extends Track{
 
-    constructor(pos, cWidth, cHeight, cRot){
-        super(pos, cWidth, cHeight, cRot);
+    constructor(pos, cWidth, cHeight, cRot, id){
+        super(pos, cWidth, cHeight, cRot, id);
         this._options = {
             fill: '#EEE',
             stroke: 'black',
@@ -1204,8 +1202,8 @@ class TrackJunctionType2 extends Track{
 
 class TrackCrossType1 extends Track{
 
-    constructor(pos, cWidth, cHeight, cRot){
-        super(pos, cWidth, cHeight, cRot);
+    constructor(pos, cWidth, cHeight, cRot, id){
+        super(pos, cWidth, cHeight, cRot, id);
         this._options = {
             fill: '#EEE',
             stroke: 'black',
